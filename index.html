@@ -304,7 +304,7 @@ footer{padding:60px 0 40px;font-size:14px;color:var(--mute)}
       <div class="sh" style="margin:0" data-reveal><span class="mono">Tarifs</span><h2>Simple, par espace <span class="serif">et par mois.</span></h2></div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
         <div class="seg" id="period"><button class="on" data-p="m">Mensuel</button><button data-p="a">Annuel <em>−20 %</em></button></div>
-        <div class="seg" id="cur"><button class="on" data-c="EUR">€</button><button data-c="USD">$</button><button data-c="XAF">FCFA</button></div>
+        <div class="seg" id="cur"><button class="on" data-c="EUR">€</button><button data-c="USD">$</button><button data-c="GBP">£</button></div>
       </div>
     </div>
     <div class="plans">
@@ -376,9 +376,9 @@ const appIO=new IntersectionObserver(e=>{if(e[0].isIntersecting){runVote();appIO
 
 // Extraction de décisions
 const notes=$('#notes'),dec=$('#dec');
-notes.value=`Point budget : on valide 2,5 M FCFA pour la campagne radio, @Samuel d'ici le 20/11
+notes.value=`Point budget : on valide 38 000 € pour la campagne radio, @Samuel d'ici le 20/11
 Discussion longue sur le logo, rien de tranché
-Décidé : passage au paiement Mobile Money @Rose avant le 05/12
+Décidé : passage au prélèvement SEPA @Rose avant le 05/12
 Ok pour recruter un stagiaire design @Aïcha
 Prochaine réunion jeudi`;
 function extract(){
@@ -404,11 +404,11 @@ function roi(){
 ['r1','r2','r3','r4'].forEach(i=>$('#'+i).addEventListener('input',roi));roi();
 
 // Tarifs
-const RATE={EUR:1,USD:1.08,XAF:655.957};let per='m',cur='EUR';
+const RATE={EUR:1,USD:1.08,GBP:.86};let per='m',cur='EUR';
 function prices(){
   document.querySelectorAll('.price').forEach(p=>{
-    let v=+p.dataset.eur*(per==='a'?.8:1)*RATE[cur];v=cur==='XAF'?Math.round(v/100)*100:Math.round(v*100)/100;
-    p.innerHTML=(cur==='XAF'?sp(v.toLocaleString('fr-FR'))+' F':fmt(v,cur).replace(/,00/,''))+`<small>/ membre / mois${per==='a'&&v?' · annuel':''}</small>`;
+    let v=+p.dataset.eur*(per==='a'?.8:1)*RATE[cur];v=Math.round(v*100)/100;
+    p.innerHTML=fmt(v,cur).replace(/,00/,'')+`<small>/ membre / mois${per==='a'&&v?' · annuel':''}</small>`;
   });
 }
 const seg=(id,cb)=>$(id).addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;[...$(id).children].forEach(x=>x.classList.toggle('on',x===b));cb(b)});
@@ -417,7 +417,7 @@ seg('#period',b=>{per=b.dataset.p;prices()});seg('#cur',b=>{cur=b.dataset.c;pric
 // FAQ
 const FAQ=[['Faut-il installer quelque chose ?','Non. Quorum fonctionne dans le navigateur, sur ordinateur comme sur téléphone. Les participants rejoignent par un simple lien, sans compte.'],
 ['Mes données sont-elles en sécurité ?','Les données sont chiffrées en transit et au repos, hébergées en Europe. Vous pouvez tout exporter ou tout supprimer à tout moment.'],
-['Peut-on payer par Mobile Money ?','Oui : Orange Money et MTN MoMo sont acceptés en plus de la carte bancaire et du virement, avec facture en FCFA.'],
+['Quels moyens de paiement acceptez-vous ?','Carte bancaire, prélèvement SEPA et virement, avec facture en euros conforme à la TVA intracommunautaire.'],
 ['Que se passe-t-il à la fin de l\'essai ?','Vous passez automatiquement au plan Essentiel, gratuit. Rien n\'est perdu, rien n\'est facturé sans votre accord.'],
 ['Quorum fonctionne-t-il pour les réunions en présentiel ?','Oui. Un écran partagé suffit : l\'animateur fait voter la salle depuis son téléphone et les décisions s\'affichent en direct.']];
 $('#faqs').innerHTML=FAQ.map(([q,a],i)=>`<details${i?'':' open'}><summary>${q}</summary><p>${a}</p></details>`).join('');

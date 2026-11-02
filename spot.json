@@ -4,7 +4,7 @@
   "sous_titre": "Copywriting, design, intégration, démo interactive",
   "couleur": "#2541ff",
   "graine": 2,
-  "voix": [[3.3, "Une landing page SaaS qui montre le produit, au lieu d'en parler,"], [11.0, "une démo à essayer sur place,"], [16.2, "un calculateur de gain, et des tarifs en euros, en dollars, ou en francs CFA."]],
+  "voix": [[3.3, "Une landing page SaaS qui montre le produit, au lieu d'en parler,"], [11.0, "une démo à essayer sur place,"], [16.2, "un calculateur de gain, et des tarifs en euros, en dollars, ou en livres sterling."]],
   "etapes": [
     {"t": "scroll", "y": 560, "ms": 1800, "pause": 4200},
     {"t": "eval", "js": "document.querySelector('#demo').scrollIntoView({behavior:'smooth'})", "pause": 1200},

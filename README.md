@@ -13,7 +13,7 @@ Spot de présentation (30 s) : [media/spot-30s.mp4](https://lordlennyx.github.io
 - Maquette de l'application en HTML/CSS avec vote en direct animé (aucune image)
 - Démo interactive : des notes en vrac deviennent des décisions (responsable, échéance)
 - Calculateur d'économies piloté par curseurs
-- Tarifs mensuel / annuel en euros, dollars ou francs CFA
+- Tarifs mensuel / annuel en euros, dollars ou livres sterling
 - FAQ en accordéon, formulaire d'inscription validé, entièrement responsive
 
 ## Réalisation
