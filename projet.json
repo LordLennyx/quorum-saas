@@ -1,0 +1,16 @@
+{
+  "repo": "quorum-saas",
+  "nom": "Quorum",
+  "type": "Landing page · SaaS",
+  "categorie": "Sites web",
+  "resume": "Page d'atterrissage d'un logiciel de prise de décision en réunion : maquette du produit animée, démo jouable, calculateur de retour sur investissement, tarifs multi-devises.",
+  "fonctions": [
+    "Maquette de l'application en HTML/CSS avec vote en direct animé (aucune image)",
+    "Démo interactive : des notes en vrac deviennent des décisions (responsable, échéance)",
+    "Calculateur d'économies piloté par curseurs",
+    "Tarifs mensuel / annuel en euros, dollars ou francs CFA",
+    "FAQ en accordéon, formulaire d'inscription validé, entièrement responsive"
+  ],
+  "stack": "HTML, CSS, JavaScript natif",
+  "extra": {"Typographies": "Schibsted Grotesk, Newsreader, JetBrains Mono", "Rédaction": "textes de conversion écrits pour le produit"}
+}

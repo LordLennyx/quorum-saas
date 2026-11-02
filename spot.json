@@ -1,0 +1,19 @@
+{
+  "titre": "<em>Quorum</em>, landing page SaaS",
+  "type": "Landing page · SaaS",
+  "sous_titre": "Copywriting, design, intégration, démo interactive",
+  "couleur": "#2541ff",
+  "graine": 2,
+  "voix": [[3.3, "Une landing page SaaS qui montre le produit, au lieu d'en parler,"], [11.0, "une démo à essayer sur place,"], [16.2, "un calculateur de gain, et des tarifs en euros, en dollars, ou en francs CFA."]],
+  "etapes": [
+    {"t": "scroll", "y": 560, "ms": 1800, "pause": 4200},
+    {"t": "eval", "js": "document.querySelector('#demo').scrollIntoView({behavior:'smooth'})", "pause": 1200},
+    {"t": "eval", "js": "const n=document.querySelector('#notes');n.focus();n.selectionStart=n.selectionEnd=n.value.length", "pause": 100},
+    {"t": "type", "sel": "#notes", "text": "\nOn valide le nouveau site @Béchard 30/11", "delay": 38, "pause": 900},
+    {"t": "eval", "js": "document.querySelector('#roi').scrollIntoView({behavior:'smooth'})", "pause": 1100},
+    {"t": "eval", "js": "let v=12;const r=document.querySelector('#r1');const id=setInterval(()=>{v++;r.value=v;r.dispatchEvent(new Event('input'));if(v>=30)clearInterval(id)},60)", "pause": 1600},
+    {"t": "eval", "js": "document.querySelector('#tarifs').scrollIntoView({behavior:'smooth'})", "pause": 1000},
+    {"t": "click", "sel": "#period button:nth-child(2)", "pause": 700},
+    {"t": "click", "sel": "#cur button:nth-child(3)", "pause": 1400}
+  ]
+}
